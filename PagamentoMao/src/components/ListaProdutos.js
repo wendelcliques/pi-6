@@ -7,7 +7,7 @@ const ListaProdutos = () => {
     return (
         <View>
             <Text>Lista de Produtos</Text>
-            <FlatList>
+            <FlatList
                 data={[
                     {key: 'Refrigerante: $10,00'},
                     {key: 'Pastel: $10,00'},
@@ -19,10 +19,11 @@ const ListaProdutos = () => {
                     {key: 'Batata Frita: $10,00'},
                     {key: 'Pipoca: $10,00'},
                     {key: 'Algodão Doce: $10,00'},
+                    
                 ]}
 
-                renderItem={({item}) => <Text>{item.key}</Text>}
-            </FlatList>
+                renderItem={({item}) => <Text style={styles.carouselItemTitle}>- {item.key}</Text>}
+            />
         </View>
     )
 }

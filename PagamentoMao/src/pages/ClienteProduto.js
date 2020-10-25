@@ -11,6 +11,7 @@ const ClienteProduto = () => {
         <View style={styles.container}>
             <View style={styles.carouselItemContainer} >
             <CarrosselBarracas />
+            
             </View>
             <View style={styles.listadeprodutos}>
             <ListaProdutos />
