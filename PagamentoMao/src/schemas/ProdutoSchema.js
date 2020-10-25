@@ -8,7 +8,7 @@ const ProdutoSchema = {
         produtoAt: 'date',
         photo: 'string?',
         isInit: 'bool',
-        barraca: 'Barraca',
+        barraca: 'Barraca?',
 
     },
 };
