@@ -14,6 +14,7 @@ const ClienteProduto = () => {
             
             </View>
             <View style={styles.listadeprodutos}>
+                <Text>realm</Text>
             <ListaProdutos />
             </View>
         </View>
