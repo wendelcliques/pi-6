@@ -4,6 +4,7 @@ import { View, Text } from 'react-native'
 import styles from '../styles/index'
 
 import CarrosselBarracas from '../components/CarrosselBarracas';
+import ListaProdutos from '../components/ListaProdutos';
 
 const ClienteProduto = () => {
     return (
@@ -12,7 +13,7 @@ const ClienteProduto = () => {
             <CarrosselBarracas />
             </View>
             <View style={styles.listadeprodutos}>
-
+            <ListaProdutos />
             </View>
         </View>
 
