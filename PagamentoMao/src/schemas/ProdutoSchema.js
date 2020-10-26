@@ -3,8 +3,9 @@ const ProdutoSchema = {
     primaryKey: 'id',
     properties: {
         id: 'string',
-        saldo: 'double',
-        description: 'string',
+        name: 'string?',
+        amount: 'double',
+        description: 'string?',
         produtoAt: 'date',
         photo: 'string?',
         isInit: 'bool',

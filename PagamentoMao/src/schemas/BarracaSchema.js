@@ -1,5 +1,5 @@
 const BarracaSchema = {
-    nome: 'Barraca',
+    name: 'Barraca',
     primaryKey: 'id',
     properties: {
         id: 'string',
