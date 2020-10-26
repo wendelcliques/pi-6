@@ -1,5 +1,5 @@
 const ProdutoSchema = {
-    nome: 'Produto',
+    name: 'Produto',
     primaryKey: 'id',
     properties: {
         id: 'string',
