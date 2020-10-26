@@ -9,6 +9,7 @@ import {saveProduto } from '../services/Produto';
 
 const AdministradorProdutos = () => {
     const save = () => {
+        alert('oi, passei aqui');
         saveProduto();
     };
 
