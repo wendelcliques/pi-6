@@ -6,7 +6,7 @@ import ProdutoSchema from '../schemas/ProdutoSchema';
 export const getRealm = async () => {
     const realm = await Realm.open({
         schema: [BarracaSchema, ProdutoSchema],
-        schemaVersion: 3,
+        schemaVersion: 5,
     });
 return realm;
 };

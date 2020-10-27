@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { View, TextInput, Button } from 'react-native'
 import styles from '../styles/index'
 import ListaProdutos from '../components/ListaProdutos';
@@ -8,16 +8,21 @@ import {saveProduto } from '../services/Produto';
 
 
 const AdministradorProdutos = () => {
-    const save = () => {
-        //alert('oi, passei aqui');
-        saveProduto();
-    };
-
+  const [amount, setAmount] = useState('0');
+  const save = () => {
+      const value = {
+          amount: parseFloat(amount),
+      }
+    saveProduto(value);
+  };
 
     return (
         <View style={styles.container}>
             <View>
-                <TextInput></TextInput>
+                <TextInput
+                onChangeText={text => setAmount(text)}
+                value={amount}
+                />
                 <TextInput></TextInput>
                 <Button title="Camera" />
             </View>
