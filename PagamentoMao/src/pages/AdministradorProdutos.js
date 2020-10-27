@@ -8,7 +8,7 @@ import {saveProduto } from '../services/Produto';
 
 
 const AdministradorProdutos = () => {
-  const [amount, setAmount] = useState('0');
+  const [amount, setAmount] = useState('0.00');
   const save = () => {
       const value = {
           amount: parseFloat(amount),
