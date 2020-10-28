@@ -1,6 +1,6 @@
 import { Alert } from 'react-native';
 import {getRealm} from './Realm';
-import {getUUID} from './UUID';
+//import {getUUID} from './UUID';
 
 export const getProdutos = async () => {
     const realm = await getRealm();
@@ -16,7 +16,8 @@ const {amount} = value;
 try {
  realm.write(() => {
      data = {
-        id: getUUID(),
+        //id: getUUID(),
+        id: 'ABC',
         amount: amount,       
         produtoAt: new Date(),       
         isInit: false,

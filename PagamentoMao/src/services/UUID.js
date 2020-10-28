@@ -1,4 +1,4 @@
 export const getUUID = () => {
-    const uuidv4 = require('uuid/v4');
-    return uuidv4();
+  const { v1: uuidv1 } = require('uuid');
+    return uuidv1();
   };
