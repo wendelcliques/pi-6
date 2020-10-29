@@ -1,0 +1,4 @@
+#Wed Oct 28 22:18:58 BRT 2020
+base.0=E\:\\LENOVO IDEAPAD 330S\\Documents\\GitHub\\pi-6\\teste\\android\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
+path.0=classes.dex
+renamed.0=classes.dex
