@@ -17,7 +17,7 @@ try {
  realm.write(() => {
      data = {
        // id: getUUID(),
-        id: 'ABC',
+        id: 'ABD',
         amount: amount,       
         produtoAt: new Date(),       
         isInit: false,
