@@ -16,7 +16,7 @@ const {amount} = value;
 try {
  realm.write(() => {
      data = {
-        //id: getUUID(),
+       // id: getUUID(),
         id: 'ABC',
         amount: amount,       
         produtoAt: new Date(),       
