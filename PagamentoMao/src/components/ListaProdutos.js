@@ -1,19 +1,14 @@
-import React, {useEffect, useState} from 'react'
+
 import { View, Text, FlatList } from 'react-native'
-import {getProdutos} from '../services/Produto'
+
+
+import useProdutos from '../hooks/useProdutos';
 
 import styles from '../styles/index';
 
 const ListaProdutos = () => {
-    [produtos, setProdutos] = useState([]);
-useEffect(() => {
-    async function loadProdutos() {
-        const data = await getProdutos();
-        setProdutos(data);
-    }
-    loadProdutos();
+    [produtos] = useProdutos();
 
-}, []);
 
     return (
         <View>

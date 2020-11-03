@@ -3,12 +3,17 @@ import { View, Text } from 'react-native'
 
 import styles from '../styles/index'
 
+import SaldoCliente from '../components/SaldoCliente';
+
 import CarrosselBarracas from '../components/CarrosselBarracas';
 import ListaProdutos from '../components/ListaProdutos';
 
 const ClienteProduto = () => {
     return (
         <View style={styles.container}>
+            <View>
+                <SaldoCliente />
+            </View>
             <View style={styles.carouselItemContainer} >
             <CarrosselBarracas />
             
