@@ -7,7 +7,7 @@ import useProdutos from '../hooks/useProdutos';
 import styles from '../styles/index';
 
 const ListaProdutos = () => {
-    [produtos] = useProdutos();
+    const [produtos] = useProdutos();
 
 
     return (
@@ -20,6 +20,6 @@ const ListaProdutos = () => {
             />
         </View>
     )
-}
+};
 
-export default ListaProdutos
+export default ListaProdutos;
