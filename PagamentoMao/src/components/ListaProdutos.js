@@ -1,30 +1,35 @@
-import React, {useEffect, useState} from 'react'
+import React, {useEffect, useState} from 'react';
 import { View, Text, FlatList } from 'react-native'
-
+import {getEntries} from '../../services/Entries';
 
 import styles from '../styles/index';
 
 const ListaProdutos = () => {
+    [entries, setEntries] = useState([]);
+
+    useEffect(() => {
+      async function loadEntries() {
+        const data = await getEntries();
+        setEntries(data);
+      }
+  
+      loadEntries();
+  
+      console.log('EntryList :: useEffect');
+    }, []);
+
+
     return (
         <View>
             <Text>Lista de Produtos</Text>
             <FlatList
-                data={[
-                    {key: 'Refrigerante: $10,00'},
-                    {key: 'Pastel: $10,00'},
-                    {key: 'Pizza: $10,00'},
-                    {key: 'Cachorro Quente: $10,00'},
-                    {key: 'Espeto de Morango: $10,00'},
-                    {key: 'Maçã do Amor: $10,00'},
-                    {key: 'Crepe: $10,00'},
-                    {key: 'Batata Frita: $10,00'},
-                    {key: 'Pipoca: $10,00'},
-                    {key: 'Algodão Doce: $10,00'},
-                    
-                ]}
-
-                renderItem={({item}) => <Text style={styles.carouselItemTitle}>- {item.key}</Text>}
-            />
+        data={entries}
+        renderItem={({item}) => (
+          <Text style={styles.entry}>
+            - {item.description} - ${item.amount}
+          </Text>
+        )}
+      />
         </View>
     )
 }

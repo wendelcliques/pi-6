@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "712354125679",
+    "firebase_url": "https://pagamentomao.firebaseio.com",
+    "project_id": "pagamentomao",
+    "storage_bucket": "pagamentomao.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:712354125679:android:2d9676d321081dcaa8fa9a",
+        "android_client_info": {
+          "package_name": "com.pagamentomao"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "712354125679-1jqhdsq2m2i65ct64p3qdmlolfp0q0kc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA5omF7ZBPAF0A75Avrm8eMg8-ao9Ox4dE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "712354125679-1jqhdsq2m2i65ct64p3qdmlolfp0q0kc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
