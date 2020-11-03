@@ -1,5 +1,6 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import { View, Text, FlatList } from 'react-native'
+
 
 import styles from '../styles/index';
 
