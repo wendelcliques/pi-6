@@ -17,7 +17,7 @@ try {
  realm.write(() => {
      data = {
        // id: getUUID(),
-        id: 'ABD',
+        id: 'ABC',
         amount: amount,       
         produtoAt: new Date(),       
         isInit: false,
@@ -27,9 +27,9 @@ try {
      realm.create('Produto', data, true);
  });
 
- console.log(data);
+ console.log('saveProduto :: data ', JSON.stringify(data));
 } catch (error) {
-    console.error('saveProduto :: error on save object: ', JSON.stringify(error));
+    console.error('saveProduto :: error on save object: ', JSON.stringify(error), JSON.stringify(data));
     Alert.alert('Erro ao salvar os dados', );
 }
 

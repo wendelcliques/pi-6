@@ -8,5 +8,15 @@ export const getRealm = async () => {
         schema: [BarracaSchema, ProdutoSchema],
         schemaVersion: 6,
     });
+
+    //dropDB(realm);
+   // initDB(realm);
 return realm;
+};
+
+export const dropDB = realm => {
+    realm.write(() => {
+        console.log('dropDB :: droping db ...');
+        realm.deleteAll();
+    });
 };
