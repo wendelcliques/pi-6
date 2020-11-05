@@ -1,11 +1,12 @@
-//import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import { View, Text, FlatList } from 'react-native'
+import {getEntries} from '../services/Entries'
 
 
 import styles from '../styles/index';
 
 const ListaProdutos = () => {
-    /*[entries, setEntries] = useState([]);
+    [entries, setEntries] = useState([]);
 
     useEffect(() => {
       async function loadEntries() {
@@ -16,7 +17,7 @@ const ListaProdutos = () => {
       loadEntries();
   
       console.log('EntryList :: useEffect');
-    }, []);*/
+    }, []);
 
 
     return (
