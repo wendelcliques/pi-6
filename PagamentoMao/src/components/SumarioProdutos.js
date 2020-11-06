@@ -21,7 +21,7 @@ const SumarioProdutos = () => {
 
                 </TouachableOpacity>
 
-                </View>
+            </View>
 
       
       
