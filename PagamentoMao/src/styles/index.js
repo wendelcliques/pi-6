@@ -1,13 +1,37 @@
 import {StyleSheet} from 'react-native';
-import {Colors} from 'react-native/Libraries/NewAppScreen';
+//import {Colors} from 'react-native/Libraries/NewAppScreen';
+import Colors from '../styles/Colors';
 
 const styles = StyleSheet.create({
-
+containerSaldo: {
+alignItems: 'center',
+},
     container: {
         flex: 1,
        // justifyContent: 'center',
      //   alignContent: 'center',
-        backgroundColor: Colors.dark,
+        backgroundColor: Colors.background,
+    },
+
+    saldoCliente: {
+        marginTop: 10,
+        height: 80,
+        width: 340,
+        alignSelf: 'center',
+        borderRadius: 10,
+    },
+
+    saTexto: {
+        fontSize: 14,
+        color: Colors.white,
+    },
+    saValor: {
+        fontSize: 26,
+        color: Colors.white,
+    },
+    saExtrato: {
+        fontSize: 14,
+        color: Colors.white,
     },
 carouselItemContainer: {
     

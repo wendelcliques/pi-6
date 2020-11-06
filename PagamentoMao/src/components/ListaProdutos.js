@@ -22,6 +22,7 @@ const ListaProdutos = () => {
 
     return (
         <View>
+          
             <Text>Lista de Produtos</Text>
             <FlatList
         data={entries}

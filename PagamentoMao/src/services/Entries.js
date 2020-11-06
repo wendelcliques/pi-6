@@ -11,7 +11,7 @@ export const addEntry = async value => {
   
     try {
       data = {
-        amount: samount,
+        amount: amount,
        
         entryAt: new Date(),
         
