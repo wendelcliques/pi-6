@@ -1,34 +1,24 @@
+import React from 'react'
 
-import { View, Text, TouachableOpacity } from 'react-native'
-
-
-
-import styles from '../styles/index';
 import ListaProdutos from './ListaProdutos';
+import Container from '../components/Core/Container/index';
 
 const SumarioProdutos = () => {
     
 
 
     return (
-        <View style={styles.containerLista}>          
-            <Text style={styles.containerListaTitulo} >Lista de Produtos</Text>
+        <Container 
+        title="Lista de produtos" 
+        actionLabelText="Últimos 7 dias" 
+        actionButtonText="Ver mais"
+        onPressActionButton={() => {}}>          
             <ListaProdutos />
-            <View >
-                <Text > Últimos 7 dias</Text>
-                <TouachableOpacity >
-                <Text >Ver mais</Text>
-
-                </TouachableOpacity>
-
-            </View>
-
-      
-      
-        </View>
+            
+        </Container>
 
   
-    )
-}
+    );
+};
 
 export default SumarioProdutos;

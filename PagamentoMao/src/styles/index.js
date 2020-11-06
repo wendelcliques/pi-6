@@ -46,6 +46,21 @@ alignItems: 'center',
         fontSize: 12,
         color: Colors.white,
     },
+
+    containerListaProdutos: {
+            flex: 1,
+            flexDirection: 'row',
+    },
+
+    containerListaProdutosDescription: {
+backgroundColor: Colors.blue,
+flex: 1,
+    },
+
+    containerListaProdutosValue: {
+        backgroundColor: Colors.red,
+    },
+
     saldoCliente: {
         marginTop: 10,
         height: 80,

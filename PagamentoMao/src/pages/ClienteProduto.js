@@ -13,6 +13,7 @@ import SaldoCliente from '../components/SaldoCliente';
 import LinearGradient from 'react-native-linear-gradient';
 import SumarioProdutos from '../components/SumarioProdutos';
 
+
 const ClienteProduto = () => {
     return (
         <View style={styles.container}>
