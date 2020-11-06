@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import { View, TextInput, Button } from 'react-native'
-import ListaProduto from '../components/ListaProdutos'
+import SumarioProdutos from '../components/SumarioProdutos'
+
 import {addEntry} from '../services/Entries'
 
 const AdministradorProdutos = () => {
@@ -31,7 +32,7 @@ const AdministradorProdutos = () => {
             </View>
 
             <View>
-                <ListaProduto />
+                <SumarioProdutos />
             </View>
         </View>
     )

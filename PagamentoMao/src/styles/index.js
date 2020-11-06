@@ -13,6 +13,39 @@ alignItems: 'center',
         backgroundColor: Colors.background,
     },
 
+    containerLista: {
+        backgroundColor: Colors.asphalt,
+        borderRadius: 5,
+        borderStyle: 'solid',
+        borderWidth: 1,
+        borderColor: 'rgba(255, 255, 255, 0.2)',
+        margin: 5,
+        padding: 8,
+    },
+
+    containerListaTitulo: {
+        fontSize: 12,
+        color: Colors.white,
+        marginBottom: 5,
+    },
+
+    actionContainerLista: {
+        flexDirection: 'row',
+    },
+
+    actionLabel: {
+        flex: 1,
+        fontSize: 12,
+        color: Colors.white,
+    },
+
+    actionButton: {
+        flexDirection: 'row',
+    },
+    actionButtonText: {
+        fontSize: 12,
+        color: Colors.white,
+    },
     saldoCliente: {
         marginTop: 10,
         height: 80,
@@ -71,7 +104,7 @@ carouselItemImage: {
 
 listadeprodutos: {
     flex: 1,
-    backgroundColor: '#3498db',
+    backgroundColor: Colors.background,
 },
 });
 

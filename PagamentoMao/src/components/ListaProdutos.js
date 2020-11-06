@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import { View, Text, FlatList } from 'react-native'
+
 import {getEntries} from '../services/Entries'
 
 
@@ -21,9 +22,10 @@ const ListaProdutos = () => {
 
 
     return (
-        <View>
+     
           
-            <Text>Lista de Produtos</Text>
+            
+            <View>
             <FlatList
         data={entries}
         renderItem={({item}) => (
@@ -32,8 +34,18 @@ const ListaProdutos = () => {
           </Text>
         )}
       />
-        </View>
-    )
-}
+
+            </View>
+            
+
+    );
+        };
+          
+
+      
+      
+     
+
+  
 
 export default ListaProdutos
