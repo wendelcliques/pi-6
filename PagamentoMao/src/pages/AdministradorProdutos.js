@@ -1,6 +1,8 @@
 import React, {useState} from 'react'
 import { View, TextInput, Button } from 'react-native'
 import SumarioProdutos from '../components/SumarioProdutos'
+import AdministradorProdutosModal from './AdministradorProdutosModal'
+
 
 import {addEntry} from '../services/Entries'
 
@@ -26,6 +28,8 @@ const AdministradorProdutos = () => {
                 value={amount}
                 />
             </View>
+
+            <AdministradorProdutosModal />
 
             <View>
                 <Button title="Adicionar" onPress={save} />
