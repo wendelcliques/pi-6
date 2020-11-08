@@ -13,6 +13,60 @@ alignItems: 'center',
         backgroundColor: Colors.background,
     },
 
+        modalAdmProd: {
+            flex: 1,
+            backgroundColor: Colors.background,
+        },
+
+        modalAdmProdItem: {
+            backgroundColor: Colors.asphalt,
+            borderRadius: 15,
+            marginVertical: 10,
+            marginHorizontal: 20,
+            padding: 20,
+        },
+
+        modalAdmProdItemText: {
+            fontSize: 20,
+            color: Colors.white,
+            textAlign: 'center',
+        },
+
+        modalAdmProdCloseButton: {
+            backgroundColor: Colors.background,
+            borderWidth: 1,
+            borderColor: Colors.green,
+            borderRadius: 15,
+           
+            alignSelf: 'center',
+            marginVertical: 10,
+            marginHorizontal: 20,
+            paddingVertical: 3,
+            paddingHorizontal: 5,
+        },
+
+        modalAdmProdCloseButtonText: {
+            fontSize: 14,
+            color: Colors.green,
+            textAlign: 'center',
+        },
+
+
+    adProdModalButton: {
+        backgroundColor: Colors.asphalt,
+        borderRadius: 150,
+        width: 200,
+        marginVertical: 5,
+        marginHorizontal: 10,
+        padding: 5,
+    },
+
+    adProdModalButtonText: {
+        fontSize: 20,
+        color: Colors.white,
+        textAlign: 'center',
+    },
+
     containerLista: {
         backgroundColor: Colors.asphalt,
         borderRadius: 5,

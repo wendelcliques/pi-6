@@ -6,12 +6,14 @@ export const addEntry = async value => {
     let data = {};
 
     const {amount} = value;
+    const {description} = value;
   
     console.log('addEntry :: value: ', JSON.stringify(value));
   
     try {
       data = {
         amount: amount,
+        description: description,
        
         entryAt: new Date(),
         

@@ -24,7 +24,7 @@ export const getDefaultCategories = () => {
         },
 
     ];
-}]
+};
 
 export const getInitCategories = async () => {
     const querySnapshot = await firestore()
