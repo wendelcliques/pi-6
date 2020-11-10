@@ -51,6 +51,13 @@ alignItems: 'center',
             textAlign: 'center',
         },
 
+        mask: {
+            fontSize: 28,
+            color: Colors.white,
+            textAlign: 'center',
+            
+        },
+
 
     adProdModalButton: {
         backgroundColor: Colors.asphalt,
@@ -107,12 +114,21 @@ alignItems: 'center',
     },
 
     containerListaProdutosDescription: {
-backgroundColor: Colors.blue,
+
 flex: 1,
     },
 
+    entry: {
+        fontSize:14,
+        color: Colors.white,
+    },
+
     containerListaProdutosValue: {
-        backgroundColor: Colors.red,
+       
+    },
+    containerListaProdutosValueText: {
+        fontSize:14,
+        color: Colors.white,
     },
 
     saldoCliente: {

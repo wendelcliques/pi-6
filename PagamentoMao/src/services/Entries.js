@@ -7,6 +7,7 @@ export const addEntry = async value => {
 
     const {amount} = value;
     const {description} = value;
+    const {category} = value;
   
     console.log('addEntry :: value: ', JSON.stringify(value));
   
@@ -14,6 +15,7 @@ export const addEntry = async value => {
       data = {
         amount: amount,
         description: description,
+        category: category,
        
         entryAt: new Date(),
         

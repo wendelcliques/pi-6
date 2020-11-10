@@ -3,6 +3,7 @@ import { View, TouchableOpacity, Text, Modal, FlatList, TextInput, Button } from
 import styles from '../styles/index'
 
 import AdministradorCategoriasModal from './AdministradorCategoriasModal'
+import {TextInputMask} from 'react-native-masked-text';
 
 import {addEntry} from '../services/Entries'
 
@@ -30,6 +31,7 @@ const AdministradorProdutosModal = () => {
         const value = {
             amount: parseFloat(amount),
             description: description,
+            category: category,
         };
 
 
@@ -64,10 +66,24 @@ const AdministradorProdutosModal = () => {
                 <AdministradorCategoriasModal 
                 category={category}  
                 onChangeCategory={setCategory}/>
-                <TextInput
-                onChangeText={text => setAmount(text)}
-                value={amount}
+
+
+                <TextInputMask 
+                style={styles.mask}
+                 type={'money'}
+                 options={{
+                    precision: 2,
+                    separator: ',',
+                    delimiter: '.',
+                    unit: '',
+                    suffixUnit: ''
+                  }}
+
+                  value={amount}
+                  includeRawValueInChangeText={true}
+                  onChangeText={(maskedValue, rawValue) => setAmount(rawValue)}
                 />
+                
 
                 
            

@@ -61,6 +61,8 @@ renderItem={({item}) => (
   style={styles.modalAdmProdItem}
   onPress={() => 
     onCategoryPress(item)}>
+
+        
       <Text style={[styles.modalAdmProdItemText, {color: item.color}]}>{item.name}</Text>
   </TouchableOpacity>  
 )}
