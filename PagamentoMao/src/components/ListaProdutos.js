@@ -12,7 +12,7 @@ import styles from '../styles/index';
 const ListaProdutos = () => {
     [entries, setEntries] = useState([]);
 
-    let[produto, setProduto] = useState();
+    let[produto, setProduto] = useState([]);
 
     useEffect(() => {
       async function loadEntries() {
@@ -76,7 +76,8 @@ const ListaProdutos = () => {
                transparent={false}
                visible={modalVisible}
               >
-<View> <Text>{produto.amount}</Text></View>
+ <Text>{produto.amount}</Text>
+ <Text>{produto.description}</Text>
                  
              
 
