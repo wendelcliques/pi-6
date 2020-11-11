@@ -52,6 +52,8 @@ alignItems: 'center',
         },
 
         mask: {
+           // backgroundColor: Colors.asphalt,
+
             fontSize: 28,
             color: Colors.white,
             textAlign: 'center',

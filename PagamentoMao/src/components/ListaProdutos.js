@@ -1,7 +1,11 @@
 import React, {useEffect, useState} from 'react';
-import { Modal, View, Text, FlatList, TouchableOpacity } from 'react-native'
+import { Modal, View, Text, FlatList, TouchableOpacity, TextInput} from 'react-native'
 
 import {getEntries} from '../services/Entries'
+
+import {upEntry} from '../services/Entries'
+
+import {TextInputMask} from 'react-native-masked-text';
 
 
 
@@ -10,9 +14,29 @@ import styles from '../styles/index';
 //import AdminAtualizarProdModal from '../pages/AdminAtualizarProdModal';
 
 const ListaProdutos = () => {
-    [entries, setEntries] = useState([]);
+  const entry = {
+    id: null,
+    description: null,
+    amount: 0,
+    entryAt: new Date(),
+    category: null,
+};
 
-    let[produto, setProduto] = useState([]);
+const [amount, setAmount] = useState(entry.amount);
+const [description, setDescription] = useState(entry.description);
+const [category, setCategory] = useState(entry.category);
+
+//const [modalVisible, setModalVisible] = useState(false);
+
+
+
+    const [entries, setEntries] = useState([]);
+
+    const [produto, setProduto] = useState([]);
+
+    const [modalVisible, setModalVisible] = useState(false);
+
+   
 
     useEffect(() => {
       async function loadEntries() {
@@ -26,11 +50,27 @@ const ListaProdutos = () => {
     }, []);
 
     const onChangePress = item => {
-      setProduto(item);
-     
-  };
+      setProduto(item);  
+      
 
-    const [modalVisible, setModalVisible] = useState(false);
+    };
+
+  
+
+  const update = () => {
+    const value = {
+        amount: parseFloat(amount),
+        description: description,
+        category: category,
+    };
+
+
+    console.log('AdministradorProduto :: save', value);
+
+    upEntry(value);
+};
+
+   
     const onClosePress = () => {
       setModalVisible(false);
     };
@@ -44,7 +84,11 @@ const ListaProdutos = () => {
                     <TouchableOpacity
                     onPress={() => {
                       setModalVisible(true);
+                      setAmount(item.amount)
+                      setDescription(item.description)
+                      setCategory(item.category)
                       onChangePress(item)
+
                     }}>
                      
                      <View style={styles.containerListaProdutos}>
@@ -72,22 +116,58 @@ const ListaProdutos = () => {
               />
 
               <Modal
+              style={styles.container}
                animationType="slide"
                transparent={false}
                visible={modalVisible}
               >
- <Text>{produto.amount}</Text>
- <Text>{produto.description}</Text>
+                 <View style={styles.modalAdmProd}>
+                       
+                        <Text>{amount}</Text>
+                        <Text>{produto.description}</Text>
+                        
+                        <TextInputMask 
+                style={styles.mask}
+                 type={'money'}
+                 options={{
+                    precision: 2,
+                    separator: ',',
+                    delimiter: '.',
+                    unit: '',
+                    suffixUnit: ''
+                  }}
+
+                  value={amount}
+                  includeRawValueInChangeText={true}
+                  onChangeText={(maskedValue, rawValue) => setAmount(rawValue)}
+                />
+                      
+
+                <TextInput
+                placeholder = "Produto"
+                onChange={text => onChange(text)}
+                value={produto.description}
+                />
                  
              
 
               <TouchableOpacity  
-style={styles.modalAdmProdCloseButton}
+                style={styles.modalAdmProdCloseButton}
                 onPress={() =>{
                   onClosePress();
                 }}>
                     <Text style={styles.modalAdmProdCloseButtonText} >Fechar</Text>
                     </TouchableOpacity>
+
+                    <TouchableOpacity  
+                style={styles.modalAdmProdCloseButton}
+                onPress={() =>{
+                  update();
+                }}>
+                    <Text style={styles.modalAdmProdCloseButtonText} >Atualizar</Text>
+                    </TouchableOpacity>
+
+                    </View>   
 
               </Modal>
 

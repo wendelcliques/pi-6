@@ -14,7 +14,7 @@ const AdministradorProdutosModal = () => {
   
     const entry = {
         id: null,
-        description: 'Digite o nome do produto',
+        description: null,
         amount: 0,
         entryAt: new Date(),
         category: {id: null, name: 'Selecione'}
@@ -59,6 +59,7 @@ const AdministradorProdutosModal = () => {
                
                  <View style={styles.modalAdmProd}>
                  <TextInput
+                 placeholder = "Digite o nome do produto"
                 onChangeText={text => setDescription(text)}
                 value={description}
                 />

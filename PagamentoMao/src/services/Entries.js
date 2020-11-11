@@ -38,6 +38,41 @@ export const addEntry = async value => {
     return data;
   };
 
+  export const upEntry= async value => {
+   
+  
+    console.log('upEntry :: value: ', JSON.stringify(value));
+
+  let data = {};
+    try {
+      data = {
+        
+        amount: value.amount,
+        description: value.description,
+        category: value.category,
+       
+        entryAt: value.entryAt || new Date(),
+        
+        isInit: false,
+    
+      };
+  
+      await firestore()
+        .collection('entries')
+        .doc(value.id)
+        .update(data);
+    } catch (error) {
+      console.error(
+        'upEntry :: error on save object: ',
+        JSON.stringify(data),
+        JSON.stringify(error),
+      );
+      Alert.alert('Erro', 'Houve um erro ao atualizar este lançamento.');
+    }
+  
+    return data;
+  };
+
   export const getEntries = async (days, category) => {
     let querySnapshot;
 
