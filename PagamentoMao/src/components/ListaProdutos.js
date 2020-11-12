@@ -1,9 +1,10 @@
 import React, {useEffect, useState} from 'react';
-import { Modal, View, Text, FlatList, TouchableOpacity, TextInput} from 'react-native'
+import { Modal, View, Text, FlatList, TouchableOpacity, TextInput, Alert} from 'react-native'
 
 import {getEntries} from '../services/Entries'
 
 import {updateEntry} from '../services/Entries'
+import {deleteEntry} from '../services/Entries'
 
 import {TextInputMask} from 'react-native-masked-text';
 
@@ -22,6 +23,7 @@ const ListaProdutos = () => {
     category: null,
 };
 
+const [id, setId] = useState(entry.id);
 const [amount, setAmount] = useState(entry.amount);
 const [description, setDescription] = useState(entry.description);
 const [category, setCategory] = useState(entry.category);
@@ -47,7 +49,7 @@ const [category, setCategory] = useState(entry.category);
       loadEntries();
   
       console.log('EntryList :: useEffect');
-    }, []);
+    }, [entry]);
 
     const onChangePress = item => {
       setProduto(item);  
@@ -61,15 +63,36 @@ const [category, setCategory] = useState(entry.category);
 
   const update = () => {
     const value = {
+        id: id,
         amount: parseFloat(amount),
         description: description,
         category: category,
     };
 
     console.log('ListaProduto :: botão atualizar', value);
-    console.log('ListaProduto :: update', value);
+    console.log('ListaProduto :: update.description', value);
 
     updateEntry(value);
+    onClosePress();
+};
+
+const onDelete = () => {
+  Alert.alert(
+    'Apagar?',
+    'Você deseja realmente apagar esse produto?',
+    [
+      {text: 'Não', style: 'cancel'},
+      {text: 'Sim', onPress: () => onOkPress()},
+    ],
+    {cancelable: false},
+  );
+};
+const onOkPress = () => {
+  const value = {
+    id: id,
+  }
+  deleteEntry(value);
+  onClosePress();
 };
 
 
@@ -87,6 +110,7 @@ const [category, setCategory] = useState(entry.category);
                     <TouchableOpacity
                     onPress={() => {
                       setModalVisible(true);
+                      setId(item.id)
                       setAmount(item.amount)
                       setDescription(item.description)
                       setCategory(item.category)
@@ -128,9 +152,7 @@ const [category, setCategory] = useState(entry.category);
               >
                  <View style={styles.modalAdmProd}>
                        
-                        <Text>{amount}</Text>
-                        <Text>{produto.description}</Text>
-                        
+                                              
                         <TextInputMask 
                 style={styles.mask}
                  type={'money'}
@@ -149,10 +171,13 @@ const [category, setCategory] = useState(entry.category);
                       
 
                 <TextInput
+                style={styles.mask}
                 placeholder = "Produto"
-                onChange={text => onChange(text)}
-                value={produto.description}
+                onChangeText={text => setDescription(text)}
+                value={description}
                 />
+
+               
                  
              
 
@@ -168,11 +193,22 @@ const [category, setCategory] = useState(entry.category);
                 style={styles.modalAdmProdCloseButton}
                 onPress={() =>{
                  
-                  update();
+                  update( );
 
                  
                 }}>
                     <Text style={styles.modalAdmProdCloseButtonText} >Atualizar</Text>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity  
+                style={styles.modalAdmProdCloseButton}
+                onPress={() =>{
+                 
+                  onDelete();
+
+                 
+                }}>
+                    <Text style={styles.modalAdmProdCloseButtonText} >Apagar</Text>
                     </TouchableOpacity>
 
                     </View>   

@@ -43,15 +43,16 @@ export const addEntry = async value => {
   
     console.log('updateEntry :: value: ', JSON.stringify(value));
     let data = {};
-
+    const {id} = value;
     const {amount} = value;
     const {description} = value;
     const {category} = value;
   
-    console.log('updateEntry :: value: ', JSON.stringify(data));
+    
 
     try {
       data = {
+        id: id,
         amount: amount,
         description: description,
         category: category,
@@ -59,24 +60,37 @@ export const addEntry = async value => {
         entryAt: new Date(),
         
         isInit: false,
-    
+        
       };
+
+      console.log('updateEntry :: data: ', JSON.stringify(data));
       
-      await firestore()
+     await firestore()
         .collection('entries')
-        .doc(value.id)
-        .update(data);
+        .doc(data.id)
+        .update( data);
     } catch (error) {
+ 
+
       console.error(
         'upEntry :: error on update object: ',
-        JSON.stringify(data),
-        JSON.stringify(error),
+      
+        'upEntry :: value.id: ',
+        JSON.stringify(entry),
+       
       );
       Alert.alert('Erro', 'Houve um erro ao atualizar este lançamento.');
     }
   
     return data;
   };
+
+ /* console.error(
+    'upEntry :: error on update object: ',
+    JSON.stringify(data),
+    
+    JSON.stringify(error),
+  );*/
 
   export const getEntries = async (days, category) => {
     let querySnapshot;
@@ -97,4 +111,21 @@ export const addEntry = async value => {
       return entries;
     };
 
-    export const deketeEntry = async 
+    export const deleteEntry = async value => {
+      let data = {};
+    const {id} = value;
+   
+      try {
+          data = {
+            id: id,
+                       
+          };
+        await firestore()
+        .collection('entries')
+        .doc(data.id)
+        .delete();
+    } catch (error) {
+
+    }
+      
+  };
