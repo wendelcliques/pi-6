@@ -38,32 +38,37 @@ export const addEntry = async value => {
     return data;
   };
 
-  export const upEntry= async value => {
+  export const updateEntry = async value => {
    
   
-    console.log('upEntry :: value: ', JSON.stringify(value));
+    console.log('updateEntry :: value: ', JSON.stringify(value));
+    let data = {};
 
-  let data = {};
+    const {amount} = value;
+    const {description} = value;
+    const {category} = value;
+  
+    console.log('updateEntry :: value: ', JSON.stringify(data));
+
     try {
       data = {
-        
-        amount: value.amount,
-        description: value.description,
-        category: value.category,
+        amount: amount,
+        description: description,
+        category: category,
        
-        entryAt: value.entryAt || new Date(),
+        entryAt: new Date(),
         
         isInit: false,
     
       };
-  
+      
       await firestore()
         .collection('entries')
         .doc(value.id)
         .update(data);
     } catch (error) {
       console.error(
-        'upEntry :: error on save object: ',
+        'upEntry :: error on update object: ',
         JSON.stringify(data),
         JSON.stringify(error),
       );
@@ -91,3 +96,5 @@ export const addEntry = async value => {
     
       return entries;
     };
+
+    export const deketeEntry = async 

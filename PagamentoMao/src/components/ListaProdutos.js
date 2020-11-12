@@ -3,7 +3,7 @@ import { Modal, View, Text, FlatList, TouchableOpacity, TextInput} from 'react-n
 
 import {getEntries} from '../services/Entries'
 
-import {upEntry} from '../services/Entries'
+import {updateEntry} from '../services/Entries'
 
 import {TextInputMask} from 'react-native-masked-text';
 
@@ -51,6 +51,8 @@ const [category, setCategory] = useState(entry.category);
 
     const onChangePress = item => {
       setProduto(item);  
+
+      console.log('ListaProduto :: onChangePress', item);
       
 
     };
@@ -64,11 +66,12 @@ const [category, setCategory] = useState(entry.category);
         category: category,
     };
 
+    console.log('ListaProduto :: botão atualizar', value);
+    console.log('ListaProduto :: update', value);
 
-    console.log('AdministradorProduto :: save', value);
-
-    upEntry(value);
+    updateEntry(value);
 };
+
 
    
     const onClosePress = () => {
@@ -88,6 +91,8 @@ const [category, setCategory] = useState(entry.category);
                       setDescription(item.description)
                       setCategory(item.category)
                       onChangePress(item)
+
+                      console.log('ListaProduto :: Flatlist onpress', item);
 
                     }}>
                      
@@ -162,7 +167,10 @@ const [category, setCategory] = useState(entry.category);
                     <TouchableOpacity  
                 style={styles.modalAdmProdCloseButton}
                 onPress={() =>{
+                 
                   update();
+
+                 
                 }}>
                     <Text style={styles.modalAdmProdCloseButtonText} >Atualizar</Text>
                     </TouchableOpacity>
