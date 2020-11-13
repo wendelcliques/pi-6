@@ -38,6 +38,7 @@ const AdministradorProdutosModal = () => {
         console.log('AdministradorProduto :: save', value);
 
         addEntry(value);
+        setModalVisible(false);
     };
     return (
         <View>
