@@ -11,6 +11,7 @@ const EntrySchema = {
     address: 'string?',
     photo: 'string?',
     isInit: 'bool',
+    order: {type: 'int', default: 0},
     category: 'Category',
   },
 };

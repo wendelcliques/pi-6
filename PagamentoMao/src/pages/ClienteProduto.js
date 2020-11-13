@@ -17,17 +17,21 @@ import SumarioProdutos from '../components/SumarioProdutos';
 const ClienteProduto = () => {
     return (
         <View style={styles.container}>
+
             <LinearGradient
         colors={[Colors.violet, Colors.blue]}
         style={styles.saldoCliente}>
             <SaldoCliente />
             </LinearGradient>
+
             <View style={styles.carouselItemContainer} >
             <CarrosselBarracas />
             </View>
+
             <View style={styles.listadeprodutos}>
             <SumarioProdutos />
             </View>
+            
         </View>
 
     )
