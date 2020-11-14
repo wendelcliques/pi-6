@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import { View, TouchableOpacity, Text, Modal, FlatList, TextInput, Button } from 'react-native'
+import { View, TouchableOpacity, Text, Modal, TextInput, Button } from 'react-native'
 import styles from '../styles/index'
 
 import AdministradorCategoriasModal from './AdministradorCategoriasModal'
@@ -16,14 +16,16 @@ const AdministradorProdutosModal = () => {
         id: null,
         description: null,
         amount: 0,
-        entryAt: new Date(),
         category: {id: null, name: 'Selecione'}
     };
     const [modalVisible, setModalVisible] = useState(false);
+    
 
     const [amount, setAmount] = useState(entry.amount);
     const [description, setDescription] = useState(entry.description);
     const [category, setCategory] = useState(entry.category);
+
+  
 
    
 
@@ -42,13 +44,27 @@ const AdministradorProdutosModal = () => {
     };
     return (
         <View>
+
+            <View  style={styles.adProdModalContainer} >
             <TouchableOpacity style={styles.adProdModalButton}
-            onPress={() => {setModalVisible(true);
+            onPress={() => {
+                setModalVisible(true);
+                
             }}>
-                <Text style={styles.adProdModalButtonText}>Adicionar Produto</Text>
+                <Text style={styles.adProdModalButtonText}>Adicionar</Text>
+                <Text style={styles.adProdModalButtonText}>Produto</Text>
             </TouchableOpacity>
 
+           
 
+            <TouchableOpacity style={styles.adProdModalButton}
+            onPress={() => {setModalVisible(true);
+               
+            }}>
+                <Text style={styles.adProdModalButtonText}>Adicionar</Text>
+                <Text style={styles.adProdModalButtonText}>Usuário</Text>
+            </TouchableOpacity>
+            </View>
 
             <Modal 
             animationType="slide"
@@ -56,7 +72,7 @@ const AdministradorProdutosModal = () => {
             visible={modalVisible}>
 
 
-              
+            
                
                  <View style={styles.modalAdmProd}>
                  <TextInput
@@ -101,7 +117,10 @@ style={styles.modalAdmProdCloseButton}
                 </TouchableOpacity>
             </View>
 
-           
+               
+
+
+
             </Modal>
         </View>
     )

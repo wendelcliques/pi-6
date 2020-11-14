@@ -1,5 +1,6 @@
 import React from 'react'
 import { View, Text, Button } from 'react-native'
+import LoginUsuarioModal from './LoginUsuarioModal'
 
 
 
@@ -25,6 +26,8 @@ const SignIn = ({ navigation }) => {
                     title="Administrador"
                     onPress={() => navigation.navigate('Administrador')}
                 />
+
+                <LoginUsuarioModal />
             </View>
         );
     }

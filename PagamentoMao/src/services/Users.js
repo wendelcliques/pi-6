@@ -2,12 +2,32 @@ import {Alert} from 'react-native';
 
 import firestore from '@react-native-firebase/firestore';
 
+export const getDefaultUsers = () => {
+  return [
+      {
+        name: 'Vendedor 1',
+           
+        
+      },
+
+      {
+        name: 'Vendedor 2',
+      },
+
+      {
+        name: 'Vendedor 3',
+      },
+
+  ];
+};
+
 export const addUsers = async value => {
     let data = {};
 
     const {name} = value;
     const {hierarchy} = value;
     const {category} = value;
+    const {password} = value;
     
   
     console.log('addEntry :: value: ', JSON.stringify(value));
@@ -17,6 +37,7 @@ export const addUsers = async value => {
         name: name,
         hierarchy: hierarchy,
         category: category,
+        password: password,
         
         isInit: false,
     

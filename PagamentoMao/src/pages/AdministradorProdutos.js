@@ -3,6 +3,8 @@ import { View, TextInput, Button } from 'react-native'
 import SumarioProdutos from '../components/SumarioProdutos'
 import AdministradorProdutosModal from './AdministradorProdutosModal'
 
+import AdminAddCategoriasModal from './AdminAddCategoriasModal'
+
 
 
 
@@ -16,6 +18,8 @@ const AdministradorProdutos = () => {
            
 
             <AdministradorProdutosModal />
+            <AdminAddCategoriasModal />
+
           
 
            

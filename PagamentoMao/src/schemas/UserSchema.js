@@ -5,6 +5,7 @@ const UserSchema = {
       id: 'string',
       hierarchy: 'string',
       name: 'string',
+      password: 'string',
       entryAt: 'date',
       latitude: 'float?',
       longitude: 'float?',

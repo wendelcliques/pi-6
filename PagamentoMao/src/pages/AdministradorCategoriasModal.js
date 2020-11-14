@@ -4,15 +4,13 @@ import styles from '../styles/index'
 
 import {getDefaultCategories} from '../services/Categories'
 
-
-
 const AdministradorCategoriasModal = ({category, onChangeCategory}) => {
-    const entry = {
+   /* const entry = {
         id: null,
         amount: 0,
         entryAt: new Date(),
         category: {id: null, name: 'Selecione'}
-    };
+    };*/
 
     const [modalVisible, setModalVisible] = useState(false);
 

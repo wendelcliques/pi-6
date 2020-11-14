@@ -60,14 +60,20 @@ alignItems: 'center',
             
         },
 
-
+ adProdModalContainer: {
+    flexDirection: 'row',
+    //justifyContent: 'center',
+    //alignContent: 'center',
+    //alignItems: 'center',
+    alignSelf: 'center',
+ },
     adProdModalButton: {
         backgroundColor: Colors.asphalt,
         borderRadius: 150,
-        width: 200,
-        marginVertical: 5,
-        marginHorizontal: 10,
-        padding: 5,
+        width: 130,
+        marginVertical: 10,
+        marginHorizontal: 2,
+        padding: 2,
     },
 
     adProdModalButtonText: {

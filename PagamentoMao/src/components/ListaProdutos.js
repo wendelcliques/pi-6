@@ -19,7 +19,6 @@ const ListaProdutos = () => {
     id: null,
     description: null,
     amount: 0,
-    entryAt: new Date(),
     category: null,
 };
 
