@@ -57,7 +57,7 @@ export const addEntry = async value => {
         description: description,
         category: category,
        
-        entryAt: new Date(),
+       
         
         isInit: false,
         
