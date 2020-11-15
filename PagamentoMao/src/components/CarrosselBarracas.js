@@ -1,5 +1,5 @@
 import React from 'react';
-import {Image, Text, View} from 'react-native';
+import {Image, Text, View, TouchableOpacity} from 'react-native';
 import Carousel from 'react-native-snap-carousel';
 
 import styles from '../styles/index';
@@ -36,26 +36,43 @@ const CarrosselBarracas = () => {
 
     ];
 
+       /* <TouchableOpacity
+                onPress={() => {this.ref.carousel.snapToNext();}}>
+
+                    <Text>{item}</Text>
+                </TouchableOpacity>*/
+
     function renderItem({item, index}) {
         return (
             <View>
+             
+
                 <Text style={styles.carouselItemTitle}>{item.title}</Text>
         <Image style={styles.carouselItemImage} source={{uri: `${item.image}`}} />
             </View>
         )
     }
 
+
     const Carrossel = () => {
         return (
             <View>
                 <Carousel 
+                  //ref={(carousel) => {this._carousel = carousel;}}
                 layout={'stack'}
                 data={carouselItems}
                 sliderWidth={300}
                 itemWidth={300}
+               
                 renderItem={renderItem}
+
+          
+               
                 />
+            
             </View>
+         
+
         )
     }
 
@@ -64,6 +81,7 @@ const CarrosselBarracas = () => {
 
     return (
         <View>
+
             <Carrossel />
         </View>
     )

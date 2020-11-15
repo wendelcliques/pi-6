@@ -12,6 +12,7 @@ import SaldoCliente from '../components/SaldoCliente';
 
 import LinearGradient from 'react-native-linear-gradient';
 import SumarioProdutos from '../components/SumarioProdutos';
+import SumarioProdutoCliente from '../components/SumarioProdutoCliente';
 
 
 const ClienteProduto = () => {
@@ -29,7 +30,7 @@ const ClienteProduto = () => {
             </View>
 
             <View style={styles.listadeprodutos}>
-            <SumarioProdutos />
+            <SumarioProdutoCliente />
             </View>
             
         </View>

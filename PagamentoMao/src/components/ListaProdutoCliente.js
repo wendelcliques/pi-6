@@ -1,12 +1,12 @@
 import React from 'react'
 import { View, Text } from 'react-native'
 
-const SumarioProduto = () => {
+const ListaProdutoCliente = () => {
     return (
         <View>
-            <Text>teste</Text>
+            <Text>ListaProdutoCliente</Text>
         </View>
     )
 }
 
-export default SumarioProduto
+export default ListaProdutoCliente
