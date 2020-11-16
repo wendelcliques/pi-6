@@ -15,13 +15,13 @@ const AdministradorProdutosModal = () => {
     const entry = {
         id: null,
         description: null,
-        amount: 0,
+        price: 0,
         category: {id: null, name: 'Selecione'}
     };
     const [modalVisible, setModalVisible] = useState(false);
     
 
-    const [amount, setAmount] = useState(entry.amount);
+    const [price, setPrice] = useState(entry.amount);
     const [description, setDescription] = useState(entry.description);
     const [category, setCategory] = useState(entry.category);
 
@@ -31,7 +31,7 @@ const AdministradorProdutosModal = () => {
 
     const save = () => {
         const value = {
-            amount: parseFloat(amount),
+            price: parseFloat(price),
             description: description,
             category: category,
         };
@@ -97,9 +97,9 @@ const AdministradorProdutosModal = () => {
                     suffixUnit: ''
                   }}
 
-                  value={amount}
+                  value={price}
                   includeRawValueInChangeText={true}
-                  onChangeText={(maskedValue, rawValue) => setAmount(rawValue)}
+                  onChangeText={(maskedValue, rawValue) => setPrice(rawValue)}
                 />
                 
 

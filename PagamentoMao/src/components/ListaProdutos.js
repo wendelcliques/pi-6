@@ -18,16 +18,16 @@ const ListaProdutos = () => {
   const entry = {
     id: null,
     description: null,
-    amount: 0,
+    price: 0,
     category: null,
 };
 
 const [id, setId] = useState(entry.id);
-const [amount, setAmount] = useState(entry.amount);
+const [price, setPrice] = useState(entry.price);
 const [description, setDescription] = useState(entry.description);
 const [category, setCategory] = useState(entry.category);
 
-//const [modalVisible, setModalVisible] = useState(false);
+
 
 
 
@@ -63,7 +63,7 @@ const [category, setCategory] = useState(entry.category);
   const update = () => {
     const value = {
         id: id,
-        amount: parseFloat(amount),
+        price: parseFloat(price),
         description: description,
         category: category,
     };
@@ -110,7 +110,8 @@ const onOkPress = () => {
                     onPress={() => {
                       setModalVisible(true);
                       setId(item.id)
-                      setAmount(item.amount)
+                      setPrice(item.price)
+                      
                       setDescription(item.description)
                       setCategory(item.category)
                       onChangePress(item)
@@ -134,7 +135,7 @@ const onOkPress = () => {
                         </View>
 
                         <View style={styles.containerListaProdutosValue}>
-                         <Text style={styles.containerListaProdutosValueText}>- ${item.amount}</Text>
+                         <Text style={styles.containerListaProdutosValueText}>- ${item.price}</Text>
                         
                         </View>
                       
@@ -163,9 +164,9 @@ const onOkPress = () => {
                     suffixUnit: ''
                   }}
 
-                  value={amount}
+                  value={price}
                   includeRawValueInChangeText={true}
-                  onChangeText={(maskedValue, rawValue) => setAmount(rawValue)}
+                  onChangeText={(maskedValue, rawValue) => setPrice(rawValue)}
                 />
                       
 

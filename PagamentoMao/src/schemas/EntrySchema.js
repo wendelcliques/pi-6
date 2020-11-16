@@ -3,6 +3,7 @@ const EntrySchema = {
   primaryKey: 'id',
   properties: {
     id: 'string',
+    price: 'double', 
     amount: 'double',
     description: 'string',
     entryAt: 'date',

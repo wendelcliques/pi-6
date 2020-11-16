@@ -5,11 +5,12 @@ import firestore from '@react-native-firebase/firestore';
 export const addOrder = async value => {
     let data = {};
 
-    const {price} = value;
-    const {amount} = value;
-    const {description} = value;
-    const {category} = value;
-    const {situation} = value;
+    const {price} = value; //preço
+    const {amount} = value; //quantidade
+    const {description} = value; //produto
+    const {category} = value; //barraca
+    const {situation} = value; //situação (carrinho, confirmado, pronto, entregue)
+    const {user} = value; //usuário
   
     console.log('addEntry :: value: ', JSON.stringify(value));
   
@@ -20,6 +21,7 @@ export const addOrder = async value => {
         description: description,
         category: category,
         situation: situation,
+        user: user,
         entryAt: new Date(),
         
         isInit: false,

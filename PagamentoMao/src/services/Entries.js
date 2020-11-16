@@ -5,7 +5,7 @@ import firestore from '@react-native-firebase/firestore';
 export const addEntry = async value => {
     let data = {};
 
-    const {amount} = value;
+    const {price} = value;
     const {description} = value;
     const {category} = value;
   
@@ -13,7 +13,7 @@ export const addEntry = async value => {
   
     try {
       data = {
-        amount: amount,
+        price: price,
         description: description,
         category: category,
        
@@ -44,7 +44,7 @@ export const addEntry = async value => {
     console.log('updateEntry :: value: ', JSON.stringify(value));
     let data = {};
     const {id} = value;
-    const {amount} = value;
+    const {price} = value;
     const {description} = value;
     const {category} = value;
   
@@ -53,7 +53,7 @@ export const addEntry = async value => {
     try {
       data = {
         id: id,
-        amount: amount,
+        price: price,
         description: description,
         category: category,
        
