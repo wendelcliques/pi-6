@@ -13,6 +13,7 @@ import SaldoCliente from '../components/SaldoCliente';
 import LinearGradient from 'react-native-linear-gradient';
 import SumarioProdutos from '../components/SumarioProdutos';
 import SumarioProdutoCliente from '../components/SumarioProdutoCliente';
+import CarrosselFlat from '../components/CarrosselFlat';
 
 
 const ClienteProduto = () => {
@@ -26,7 +27,7 @@ const ClienteProduto = () => {
             </LinearGradient>
 
             <View style={styles.carouselItemContainer} >
-            <CarrosselBarracas />
+            <CarrosselFlat />
             </View>
 
             <View style={styles.listadeprodutos}>

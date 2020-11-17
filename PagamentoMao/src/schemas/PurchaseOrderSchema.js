@@ -11,7 +11,7 @@ const PurchaseOrderSchema = {
       longitude: 'float?',
       address: 'string?',
       photo: 'string?',
-      isInit: 'bool',
+      isInit: 'bool', 
       category: 'Category',
       entries: 'Entry[]',
       user: 'User',

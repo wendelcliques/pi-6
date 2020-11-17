@@ -32,11 +32,9 @@ const [price, setPrice] = useState(entry.price);
 const [description, setDescription] = useState(entry.description);
 const [category, setCategory] = useState(entry.category);
 
-    const [idOrder, setIdOrder] = useState(order.id);
-    const [descriptionOrder, setDescriptionOrder] = useState(order.description);
-    const [priceOrder, setPriceOrder] = useState(order.price);
+   
     const [amountOrder, setAmountOrder] = useState(order.amount);
-    const [categoryOrder, setCategoryOrder] = useState(order.category);
+ 
     const [userOrder, setUserOrder] = useState(order.user);
 
     const [entries, setEntries] = useState([]);
@@ -93,8 +91,14 @@ const [category, setCategory] = useState(entry.category);
 
 
     return (
+
+  
         <View>
-            <FlatList
+
+
+
+          <View>
+                      <FlatList
                   data={entries}
                   keyExtractor={item => item.id}
                    renderItem={({item}) => (
@@ -136,6 +140,8 @@ const [category, setCategory] = useState(entry.category);
                       </TouchableOpacity>
                    )}
               />
+
+</View>
 
                 <Modal
               style={styles.container}

@@ -18,7 +18,7 @@ export const addOrder = async value => {
       data = {
         price: price,
         amount: amount,
-        description: description,
+        description: description || 'false',
         category: category,
         situation: situation,
         user: user,
@@ -53,6 +53,7 @@ export const addOrder = async value => {
     const {description} = value;
     const {category} = value;
     const {situation} = value;
+    const {isInit} = value;
   
     
 
@@ -61,11 +62,11 @@ export const addOrder = async value => {
         id: id,
         amount: amount,
         description: description,
-        category: category,
+        category: category || 'false',
         situation: situation,
         entryAt: new Date(),
         
-        isInit: false,
+        isInit: isInit,
         
       };
 
@@ -116,6 +117,30 @@ export const addOrder = async value => {
     
       return entries;
     };
+
+
+    export const getOrdersPedido = async value => {
+      let querySnapshot;
+  
+      querySnapshot = await firestore()
+      .collection('orders')
+      .where('isInit', '==', true)
+        .orderBy('entryAt')
+        .get();
+  
+        let entries = querySnapshot.docs.map(documentSnapshot => {
+          return {...documentSnapshot.data(), id: documentSnapshot.id};
+        });
+      
+      
+        console.log('getOrdersPedido :: data: ', JSON.stringify(entries));
+        return entries;
+
+        
+   
+      };
+
+
 
     export const deleteOrder = async value => {
       let data = {};

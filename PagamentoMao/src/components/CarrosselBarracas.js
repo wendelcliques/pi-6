@@ -1,5 +1,5 @@
 import React from 'react';
-import {Image, Text, View, TouchableOpacity} from 'react-native';
+import {Image, Text, View, TouchableOpacity, FlatList} from 'react-native';
 import Carousel from 'react-native-snap-carousel';
 
 import styles from '../styles/index';
