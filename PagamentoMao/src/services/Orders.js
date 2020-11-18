@@ -64,7 +64,7 @@ export const addOrder = async value => {
         description: description,
         category: category || 'false',
         situation: situation,
-        entryAt: new Date(),
+        
         
         isInit: isInit,
         

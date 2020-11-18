@@ -12,6 +12,7 @@ import {TextInputMask} from 'react-native-masked-text';
 
 
 import styles from '../styles/index';
+import AdministradorCategoriasModal from '../pages/AdministradorCategoriasModal';
 //import AdminAtualizarProdModal from '../pages/AdminAtualizarProdModal';
 
 const ListaProdutos = () => {
@@ -168,6 +169,8 @@ const onOkPress = () => {
                   includeRawValueInChangeText={true}
                   onChangeText={(maskedValue, rawValue) => setPrice(rawValue)}
                 />
+
+
                       
 
                 <TextInput
@@ -179,7 +182,7 @@ const onOkPress = () => {
 
                
                  
-             
+
 
               <TouchableOpacity  
                 style={styles.modalAdmProdCloseButton}
@@ -231,3 +234,6 @@ const onOkPress = () => {
   
 
 export default ListaProdutos
+
+
+//<AdministradorCategoriasModal />

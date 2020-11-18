@@ -74,6 +74,7 @@ const [category, setCategory] = useState(entry.category);
             description: description,
             category: category,
            // user: userOrder,
+           situation: 'Pedido no carrinho',
         };
     
         console.log('ListaProduto :: botão atualizar', value);
@@ -149,12 +150,27 @@ const [category, setCategory] = useState(entry.category);
                transparent={false}
                visible={modalVisible}
               >
-                 <View style={styles.modalAdmProd}>   
-                 <Text style={styles.mask}>{category}</Text>          
+                 <View style={styles.modalAdmProd}> 
+                 <View style={styles.actionButton}> 
+              
+                 <Text style={styles.label}>Barraca</Text>
+                 <Text style={styles.mask}>{category}</Text> 
+                 </View> 
+                 <View style={styles.actionButton}> 
+                 <Text style={styles.label}>Produto</Text>     
                 <Text style={styles.mask}>{description}</Text>
+                </View>  
+                <View style={styles.actionButton}> 
+                <Text style={styles.label}>Cliente</Text>
                <Text style={styles.mask}>{userOrder}</Text>
-                    <Text style={styles.mask}>{price}</Text>
+               </View>
+               <View style={styles.actionButton}> 
+               <Text style={styles.label}>Preço</Text>
+                    <Text style={styles.mask}>R$ {price}</Text>
+                    </View>
 
+                    <View style={styles.actionButton}> 
+                    <Text style={styles.label}>Quantidade</Text>
                     <TextInputMask 
                 style={styles.mask}
                  type={'money'}
@@ -170,7 +186,7 @@ const [category, setCategory] = useState(entry.category);
                   includeRawValueInChangeText={true}
                   onChangeText={(maskedValue, rawValue) => setAmountOrder(rawValue)}
                 />
-
+                </View>
 
 
 

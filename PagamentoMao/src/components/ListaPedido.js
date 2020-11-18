@@ -6,6 +6,7 @@ import {getOrders} from '../services/Orders'
 import {getOrdersPedido} from '../services/Orders'
 import {getEntries} from '../services/Entries'
 import {updateOrder} from '../services/Orders'
+import {deleteOrder} from '../services/Orders'
 
 import {TextInputMask} from 'react-native-masked-text';
 
@@ -68,7 +69,7 @@ const ListaPedido = () => {
                 id: id,
                 price: parseFloat(price),
                 amount: parseFloat(amountOrder),
-                //description: description,
+                description: description,
                 category: category,
                // user: userOrder,
                isInit: true,
@@ -84,6 +85,26 @@ const ListaPedido = () => {
 
         const onClosePress = () => {
             setModalVisible(false);
+          };
+
+          const onDelete = () => {
+            Alert.alert(
+              'Encerrar o pedido?',
+              'Você deseja realmente encerrar esse pedido?',
+              [
+                {text: 'Não', style: 'cancel'},
+                {text: 'Sim', onPress: () => onOkPress()},
+              ],
+              {cancelable: false},
+            );
+          };
+
+          const onOkPress = () => {
+            const value = {
+              id: id,
+            }
+            deleteOrder(value);
+            onClosePress();
           };
 
 
@@ -118,7 +139,7 @@ const ListaPedido = () => {
                             - {item.description} 
                            </Text>
                            <View>
-                             <Text>Pronto para retirar</Text>
+                  <Text>{item.situation}</Text>
                              </View>
                         </View>
 
@@ -131,6 +152,96 @@ const ListaPedido = () => {
                       </TouchableOpacity>
                    )}
               />
+
+<Modal
+              style={styles.container}
+               animationType="slide"
+               transparent={false}
+               visible={modalVisible}
+              >
+                 <View style={styles.modalAdmProd}> 
+
+                
+
+                    <View style={styles.actionButton}> 
+                    <Text style={styles.label}>Barraca</Text>
+                 <Text style={styles.mask}>{category}</Text> 
+                 </View> 
+
+                 <View style={styles.actionButton}> 
+                  <Text style={styles.label}>Produto</Text>        
+                <Text style={styles.mask}>{description}</Text>
+                    </View>
+
+                    <View style={styles.actionButton}> 
+                <Text style={styles.label}>Cliente</Text>
+                 <Text style={styles.mask}>{userOrder}</Text>
+                 </View>
+
+                 <View style={styles.actionButton}> 
+               <Text style={styles.label}>Preço</Text>
+                    <Text style={styles.mask}>R$ {price}</Text>                    
+                    </View>
+
+                    <View style={styles.actionButton}> 
+                    <Text style={styles.label}>Quantidade</Text>
+                    <TextInputMask 
+                style={styles.mask}
+                 type={'money'}
+                 options={{
+                    precision: 0,
+                    separator: ',',
+                    delimiter: '.',
+                    unit: '',
+                    suffixUnit: ''
+                  }}
+
+                  value={amountOrder}
+                  includeRawValueInChangeText={true}
+                  onChangeText={(maskedValue, rawValue) => setAmountOrder(rawValue)}
+                />
+                </View>
+
+
+
+
+                 <TouchableOpacity  
+                style={styles.modalAdmProdCloseButton}
+                onPress={() =>{
+                  onClosePress();
+                }}>
+                    <Text style={styles.modalAdmProdCloseButtonText} >Fechar</Text>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity  
+                style={styles.modalAdmProdCloseButton}
+                onPress={() =>{
+
+                  add();
+                 
+
+                 
+                }}>
+                    <Text style={styles.modalAdmProdCloseButtonText} >Retirar o pedido</Text>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity  
+                style={styles.modalAdmProdCloseButton}
+                onPress={() =>{
+                 
+                  onDelete();
+
+                 
+                }}>
+                    <Text style={styles.modalAdmProdCloseButtonText} >Pedido entregue</Text>
+                    </TouchableOpacity>
+
+                    
+
+                    </View>   
+
+              </Modal>
+
         </View>
     )
 }

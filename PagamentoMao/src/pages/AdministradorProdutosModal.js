@@ -76,6 +76,7 @@ const AdministradorProdutosModal = () => {
                
                  <View style={styles.modalAdmProd}>
                  <TextInput
+                 style={styles.mask}
                  placeholder = "Digite o nome do produto"
                 onChangeText={text => setDescription(text)}
                 value={description}

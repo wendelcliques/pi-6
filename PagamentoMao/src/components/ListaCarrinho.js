@@ -9,6 +9,7 @@ import {updateOrder} from '../services/Orders'
 import {TextInputMask} from 'react-native-masked-text';
 
 import styles from '../styles/index';
+import { Colors } from 'react-native/Libraries/NewAppScreen';
 
 const ListaCarrinho = () => {
     const order = {
@@ -81,6 +82,23 @@ const ListaCarrinho = () => {
             onClosePress();
         };
 
+        const pedidoFeito = () => {
+
+          if (isInit == true ) {
+
+            pedido();
+          } else {
+            add();
+          }
+
+          
+
+        };
+
+        const pedido = () => {
+          Alert.alert('O pedido já foi enviado');
+        };
+
         const onClosePress = () => {
             setModalVisible(false);
           };
@@ -95,6 +113,15 @@ const ListaCarrinho = () => {
                    renderItem={({item}) => (
                     <TouchableOpacity
                     onPress={() => {
+
+                      if (item.isInit == true ) {
+
+                        pedido();
+                      } else {
+                        
+                      
+            
+
                       setModalVisible(true); 
                       setId(item.id) //variavel id de produto
                       setPrice(item.price) //variavel preço do produto
@@ -106,9 +133,12 @@ const ListaCarrinho = () => {
 
                       console.log('ListaProduto :: Flatlist onpress', item);
 
+                      }
+
                     }}>
                      
                      <View style={styles.containerListaProdutos}>
+
                         <View>
                           <Text>Foto</Text>
                         </View>
@@ -117,8 +147,10 @@ const ListaCarrinho = () => {
                           <Text style={styles.entry}>
                             - {item.description} 
                            </Text>
-                           <View>
-                             <Text>Concluir Pedido</Text>
+
+                           <View  style={styles.actionContainerLista } >
+                           
+                            <Text>{item.situation}</Text>
                              </View>
                         </View>
 
@@ -138,12 +170,36 @@ const ListaCarrinho = () => {
                transparent={false}
                visible={modalVisible}
               >
-                 <View style={styles.modalAdmProd}>   
-                 <Text style={styles.mask}>{category}</Text>          
-                <Text style={styles.mask}>{description}</Text>
-               <Text style={styles.mask}>{userOrder}</Text>
-                    <Text style={styles.mask}>{price}</Text>
+                 <View style={styles.modalAdmProd}>  
 
+                 
+              
+
+                    
+
+                    <View style={styles.actionButton}> 
+                    <Text style={styles.label}>Barraca</Text> 
+                    <Text style={styles.mask}>{category}</Text> 
+                 </View>  
+
+                  <View style={styles.actionButton}> 
+                  <Text style={styles.label}>Produto</Text>       
+                <Text style={styles.mask}>{description}</Text>
+                    </View>
+
+                    <View style={styles.actionButton}> 
+                    <Text style={styles.label}>Cliente</Text>  
+               <Text style={styles.mask}>{userOrder}</Text>
+               </View>
+
+               <View style={styles.actionButton}> 
+               <Text style={styles.label}>Preço</Text>  
+                    <Text style={styles.mask}>R$ {price}</Text>
+                    </View>
+
+
+<View style={styles.actionButton}> 
+<Text style={styles.label}>Quantidade</Text>  
                     <TextInputMask 
                 style={styles.mask}
                  type={'money'}
@@ -159,6 +215,7 @@ const ListaCarrinho = () => {
                   includeRawValueInChangeText={true}
                   onChangeText={(maskedValue, rawValue) => setAmountOrder(rawValue)}
                 />
+                </View>
 
 
 
@@ -174,8 +231,9 @@ const ListaCarrinho = () => {
                     <TouchableOpacity  
                 style={styles.modalAdmProdCloseButton}
                 onPress={() =>{
+
+                  pedidoFeito();
                  
-                  add( );
 
                  
                 }}>

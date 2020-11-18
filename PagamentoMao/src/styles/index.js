@@ -121,6 +121,13 @@ alignItems: 'center',
             flexDirection: 'row',
     },
 
+    label: {
+        fontSize: 12,
+        color: Colors.metal,
+        marginTop: 10,
+        marginRight: 20,
+    },
+
     containerListaProdutosDescription: {
 
 flex: 1,
