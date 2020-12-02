@@ -20,6 +20,7 @@ export const addEntry = async value => {
         entryAt: new Date(),
         
         isInit: false,
+        visibility: 'public',
     
       };
   
@@ -96,6 +97,7 @@ export const addEntry = async value => {
     let querySnapshot;
 
     querySnapshot = await firestore()
+    .where('visibility', '==', 'public')
       .collection('entries')
       .orderBy('entryAt')
       .get();

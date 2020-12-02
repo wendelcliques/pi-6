@@ -16,6 +16,7 @@ const PurchaseOrderSchema = {
       entries: 'Entry[]',
       user: 'User',
       situation: 'string',
+      visibility: 'string',
     },
   };
   

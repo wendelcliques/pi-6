@@ -13,6 +13,7 @@ const CategorySchema = {
     isDebit: {type: 'bool', default: false},
     order: {type: 'int', default: 0},
     entries: 'Entry[]',
+    visibility: 'string',
   },
 };
 

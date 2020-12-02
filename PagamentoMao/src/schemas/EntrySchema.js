@@ -14,6 +14,7 @@ const EntrySchema = {
     isInit: 'bool',
     order: {type: 'int', default: 0},
     category: 'Category',
+    visibility: 'string',
   },
 };
 

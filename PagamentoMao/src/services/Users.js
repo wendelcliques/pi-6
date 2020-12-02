@@ -115,6 +115,7 @@ export const addUsers = async value => {
     let querySnapshot;
 
     querySnapshot = await firestore()
+    .where('visibility', '==', 'public')
     .collection('users')
       .orderBy('entryAt')
       .get();

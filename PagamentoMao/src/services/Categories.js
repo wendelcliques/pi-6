@@ -51,7 +51,7 @@ export const addCategory = async value => {
         user: user,
         photo: photo,
        order: order,
-       
+       visibility: 'public',
         
         isInit: false,
     
@@ -130,6 +130,7 @@ export const addCategory = async value => {
     let querySnapshot;
 
     querySnapshot = await firestore()
+    .where('visibility', '==', 'public')
     .collection('categories')
       .orderBy('order')
       .get();

@@ -14,6 +14,7 @@ const UserSchema = {
       isInit: 'bool',
       category: 'Category',
       purchaseOrder: 'PurchaseOrder',
+      visibility: 'string',
     },
   };
   

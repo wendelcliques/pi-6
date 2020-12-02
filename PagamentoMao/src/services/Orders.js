@@ -67,6 +67,7 @@ export const addOrder = async value => {
         
         
         isInit: isInit,
+        visibility: 'public',
         
       };
 
@@ -124,6 +125,7 @@ export const addOrder = async value => {
   
       querySnapshot = await firestore()
       .collection('orders')
+      .where('visibility', '==', 'public')
       .where('isInit', '==', true)
         .orderBy('entryAt')
         .get();
