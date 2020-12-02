@@ -130,8 +130,9 @@ export const addCategory = async value => {
     let querySnapshot;
 
     querySnapshot = await firestore()
-    .where('visibility', '==', 'public')
+    
     .collection('categories')
+    //.where('visibility', '==', 'public')
       .orderBy('order')
       .get();
 
