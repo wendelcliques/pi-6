@@ -97,8 +97,9 @@ export const addEntry = async value => {
     let querySnapshot;
 
     querySnapshot = await firestore()
-    .where('visibility', '==', 'public')
+    
       .collection('entries')
+      .where('visibility', '==', 'public')
       .orderBy('entryAt')
       .get();
 
