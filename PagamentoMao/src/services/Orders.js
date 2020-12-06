@@ -25,6 +25,7 @@ export const addOrder = async value => {
         entryAt: new Date(),
         
         isInit: false,
+        visibility: 'public',
     
       };
   
@@ -105,6 +106,7 @@ export const addOrder = async value => {
 
     querySnapshot = await firestore()
     .collection('orders')
+    .where('visibility', '==', 'public')
       .orderBy('entryAt')
       .get();
 
@@ -125,7 +127,7 @@ export const addOrder = async value => {
   
       querySnapshot = await firestore()
       .collection('orders')
-      //.where('visibility', '==', 'public')
+      .where('visibility', '==', 'public')
       .where('isInit', '==', true)
         .orderBy('entryAt')
         .get();
